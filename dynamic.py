@@ -1,6 +1,6 @@
+import time
 from sys import maxsize
  
-
 # dinamico
 def findMaxSubarraySum(X,n):
     maxSumEnding = [0]*n
@@ -36,6 +36,13 @@ def maxSubArraySum(a, size):
             max_ending_here = 0
     return max_so_far
  
-arr = [2, 3, 4, 5, 7]
+arr = [8, 4, 7, 5, 1, 0, 6, 2, 9, 3, 2, 1, 4, 5]
+start_time = time.time()
 print ("Maximum contiguous sum is", maxSubArraySum(arr, len(arr)))
- 
+end_time = time.time()
+
+total_time = end_time - start_time
+
+print("Tiempo total de ejecución: {:.10f} segundos".format(total_time))
+
+     
