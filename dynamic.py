@@ -18,8 +18,8 @@ def findMaxSubarraySum(X,n):
 
     return maxSubarraySum
 
-arr = [2, 3, 4, 5, 7]
-print ("Maximum contiguous sum is", findMaxSubarraySum(arr, len(arr)))
+# arr = [2, 3, 4, 5, 7]
+# print ("Maximum contiguous sum is", findMaxSubarraySum(arr, len(arr)))
 
 # Kadane’s Algorithm
 def maxSubArraySum(a, size):
@@ -36,13 +36,13 @@ def maxSubArraySum(a, size):
             max_ending_here = 0
     return max_so_far
  
-arr = [8, 4, 7, 5, 1, 0, 6, 2, 9, 3, 2, 1, 4, 5]
-start_time = time.time()
-print ("Maximum contiguous sum is", maxSubArraySum(arr, len(arr)))
-end_time = time.time()
+# arr = [8, 4, 7, 5, 1, 0, 6, 2, 9, 3, 2, 1, 4, 5]
+# start_time = time.time()
+# print ("Maximum contiguous sum is", maxSubArraySum(arr, len(arr)))
+# end_time = time.time()
 
-total_time = end_time - start_time
+# total_time = (end_time - start_time)*1000
 
-print("Tiempo total de ejecución: {:.10f} segundos".format(total_time))
+# print("Tiempo total de ejecución: {:.10f}".format(total_time))
 
      

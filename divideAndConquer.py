@@ -34,17 +34,17 @@ def maxSubArraySum(arr, l, h):
                maxCrossingSum(arr, l, m, h))
 
  
-arr = [8, 4, 5, 3, 1, 9]
-n = len(arr)
+# arr = [8, 4, 5, 3, 1, 9]
+# n = len(arr)
  
-start_time = time.time()
-max_sum = maxSubArraySum(arr, 0, n-1)
-print("Maximum contiguous sum is ", max_sum)
-end_time = time.time()
+# start_time = time.time()
+# max_sum = maxSubArraySum(arr, 0, n-1)
+# print("Maximum contiguous sum is ", max_sum)
+# end_time = time.time()
 
-total_time = (end_time - start_time)*1000
+# total_time = (end_time - start_time)*1000
 
-print("Tiempo total de ejecución: {:.7f} milisegundos".format(total_time))
+# print("Tiempo total de ejecución: {:.7f}".format(total_time))
 
      
  
