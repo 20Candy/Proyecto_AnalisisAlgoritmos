@@ -29,7 +29,7 @@ for i in range(5, 501, 1):
     print("Maximum contiguous sum is ", max_sum)
     print("Tiempo total de ejecución de DAC: {:.7f}".format(total_time))
 
-    # se calcula el tiempo de ejecución de la función findMaxSubarraySum
+    # se calcula el tiempo de ejecución de la función maxSubArraySum
     start_time = time.time()
     max_sum = dynamic.maxSubArraySum(arr)
     end_time = time.time()

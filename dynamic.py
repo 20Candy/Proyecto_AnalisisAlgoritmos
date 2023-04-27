@@ -1,45 +1,51 @@
 import time
 import sys
 
-def findMaxSubarraySum(x):
-    n = len(x)
-    maxSumEnding = [0] * n
-    maxSumEnding[0] = x[0]
+# Fuente: https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
 
-    for i in range(1, n):
-        if maxSumEnding[i-1] > 0:
-            maxSumEnding[i] = x[i] + maxSumEnding[i-1]
-        else:
-            maxSumEnding[i] = x[i]
+# ----- findMaxSubarraySum -----
+# Este primer algoritmo es la base para la creación del algoritmo definido por Kadane. 
 
-    maxSubarraySum = -sys.maxsize
-    for i in range(n):
-        maxSubarraySum = max(maxSubarraySum, maxSumEnding[i])
+# def findMaxSubarraySum(x):
+    # n = len(x)
+    # sumaMaximaFinal = [0] * n
+    # sumaMaximaFinal[0] = x[0]
 
-    return maxSubarraySum
+    # for i in range(1, n):
+    #     if sumaMaximaFinal[i-1] > 0:
+    #         sumaMaximaFinal[i] = x[i] + sumaMaximaFinal[i-1]
+    #     else:
+    #         sumaMaximaFinal[i] = x[i]
 
-# arr = [2, 3, 4, 5, 7]
-# print("Maximum contiguous sum is", findMaxSubarraySum(arr))
+    # sumaMaximaSubmatriz = -sys.maxsize
+
+    # for i in range(n):
+    #     sumaMaximaSubmatriz = max(sumaMaximaSubmatriz, sumaMaximaFinal[i])
+
+    # return sumaMaximaSubmatriz
+
+# ----- maxSubarraySum -----
+# Esta es nuestra implementación del algoritmo de Kadane. 
+# Esto implementa el acercamiento de Dynamic Programming.
 
 def maxSubArraySum(a):
     n = len(a)
-    maxSoFar = -sys.maxsize - 1
-    maxEndingHere = 0
+    sumaMaximaHastaAhora = -sys.maxsize - 1
+    sumaMaximaFinal = 0
 
     for i in range(n):
-        maxEndingHere += a[i]
-        if maxSoFar < maxEndingHere:
-            maxSoFar = maxEndingHere
+        sumaMaximaFinal += a[i]
+        if sumaMaximaHastaAhora < sumaMaximaFinal:
+            sumaMaximaHastaAhora = sumaMaximaFinal
 
-        if maxEndingHere < 0:
-            maxEndingHere = 0
+        if sumaMaximaFinal < 0:
+            sumaMaximaFinal = 0
 
-    return maxSoFar
+    return sumaMaximaHastaAhora
 
-# arr = [8, 4, 7, 5, 1, 0, 6, 2, 9, 3, 2, 1, 4, 5]
+# arr = [2, 3, 4, 5, 7]
+
 # startTime = time.time()
-# print("Maximum contiguous sum is", maxSubarraySum(arr))
+# max_sum = maxSubArraySum(arr)
 # endTime = time.time()
-
-# totalTime = (endTime - startTime) * 1000
-# print("Total execution time: {:.10f}".format(totalTime))
+# print("\nRespuesta DP:", max_sum, "Tiempo:", startTime - endTime)
