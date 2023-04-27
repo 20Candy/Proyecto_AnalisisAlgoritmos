@@ -25,7 +25,7 @@ import sys
     # return sumaMaximaSubmatriz
 
 # ----- maxSubarraySum -----
-# Esta es nuestra implementación del algoritmo de Kadane. 
+# Esta es la implementación del algoritmo de Kadane creada por nosotros. 
 # Esto implementa el acercamiento de Dynamic Programming.
 
 def maxSubArraySum(a):
