@@ -31,7 +31,7 @@ for i in range(5, 501, 1):
 
     # se calcula el tiempo de ejecución de la función findMaxSubarraySum
     start_time = time.time()
-    max_sum = dynamic.maxSubArraySum(arr, len(arr))
+    max_sum = dynamic.maxSubArraySum(arr)
     end_time = time.time()
     total_time = (end_time - start_time)
     times[1].append(total_time)

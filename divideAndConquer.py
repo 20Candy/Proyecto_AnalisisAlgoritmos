@@ -1,29 +1,27 @@
 import time
-def maxCrossingSum(arr, l, m, h):
- 
+def maxCrossingSum(arr, l, m, h): 
     sm = 0
-    left_sum = -10000
+    leftSum = -int(-1e9)
+    rightSum = -int(-1e9)
  
     for i in range(m, l-1, -1):
         sm = sm + arr[i]
  
-        if (sm > left_sum):
-            left_sum = sm
+        if (sm > leftSum):
+            leftSum = sm
  
     sm = 0
-    right_sum = -1000
     for i in range(m, h + 1):
         sm = sm + arr[i]
  
-        if (sm > right_sum):
-            right_sum = sm
+        if (sm > rightSum):
+            rightSum = sm
 
-    return max(left_sum + right_sum - arr[m], left_sum, right_sum)
- 
- 
+    return max(leftSum + rightSum - arr[m], leftSum, rightSum)
+
 def maxSubArraySum(arr, l, h):
     if (l > h):
-        return -10000
+        return int(-1e9)
     if (l == h):
         return arr[l]
  
